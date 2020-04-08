@@ -1,7 +1,7 @@
 <?php
     
     
-    namespace Cblink\FeieyunSdk\Exceptions;
+    namespace Cblink\Feieyun\Exceptions;
     
     
     class Exception extends \Exception

@@ -1,7 +1,7 @@
 <?php
     
     
-    namespace Cblink\FeieyunSdk;
+    namespace Cblink\Feieyun;
     
     
     use Cblink\FeieyunSdk\Exceptions\InvalidArgumentException;
