@@ -2,7 +2,6 @@
 
 namespace Cblink\Feieyun\Exceptions;
 
-class Exception extends \Exception
+class FeieyunApiException extends Exception
 {
-
 }
