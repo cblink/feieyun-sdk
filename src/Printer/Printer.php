@@ -18,6 +18,11 @@ class Printer extends Client
         return $this->post('Open_printerAddlist', compact('printerContent'));
     }
 
+    public function removePrinter($sn)
+    {
+        return $this->post('Open_printerDelList', compact('sn'));
+    }
+
     public function createPrinterTask($sn, $content, $times = 1)
     {
         return $this->post('Open_printMsg', compact('sn', 'content', 'times'));
@@ -26,11 +31,6 @@ class Printer extends Client
     public function createPrinterLabelTask($sn, $content, $img = '', $times = 1)
     {
         return $this->post('Open_printMsg', compact('sn', 'content', 'img', 'times'));
-    }
-
-    public function removePrinter($sn)
-    {
-        return $this->post('Open_printerDelList', compact('sn'));
     }
 
     public function editPrinterInfo($sn, $name, $phone = '')

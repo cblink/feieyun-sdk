@@ -11,7 +11,60 @@ $ composer require cblink/feieyun-sdk -vvv
 
 ## Usage
 
-TODO
+
+```
+use Cblink\Feieyun\Application;
+
+$config = [
+    'debug' => 0,
+    
+    'user' => 'your-feieyun-user',
+    'ukey' => 'your-feieyun-ukey',
+    
+    'log' => [
+      'name' => 'feieyun',
+    ],
+    'http' => [
+      'timeout' => 3,
+      'base_uri' => 'http://api.feieyun.cn/Api/Open',
+      'http_errors' => false,
+      'headers' => [
+          'content-type' => 'application/x-www-form-urlencoded',
+          'accept' => 'application/json',
+      ],
+    ],
+    'cache' => [
+      'namespace' => 'feieyun',
+    ],
+];
+
+$app = new Application($config);
+
+// 添加打印机
+$app->printer->addPrinter($sn, $key, $alias, $phone)
+
+// 从账号下终端打印机
+$app->printer->removePrinter($sn);
+
+// 创建文本打印任务
+$app->printer->createPrinterTask($sn, $content, $times = 1);
+
+// 创建标签打印任务
+$app->printer->createPrinterLabelTask($sn, $content, $img = '', $times = 1);
+
+// 修改打印机信息
+$app->printer->editPrinterInfo($sn, $name, $phone = '');
+
+// 取消终端所有未打印任务
+$app->printer->cancelUnprintTaskBySn($sn);
+
+// 获取终端状态
+$app->printer->queryPrinterStatusBySn($sn);
+
+// 查询指定打印机某天的订单统计数
+$app->printer->queryOrderInfoBySnAndDate($machine_code);
+
+```
 
 ## Contributing
 
