@@ -13,10 +13,6 @@ class LaravelServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         $this->app->alias(HttpClient::class, 'feieyun');
-
-        $this->app->extend('log', function () {
-            return app('log');
-        });
     }
 
     public function provides()
